@@ -1,5 +1,5 @@
 ---
-title: Quality Settings - Seam
+title: Seam
 ---
 
 # Seam Section

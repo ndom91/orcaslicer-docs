@@ -1,5 +1,5 @@
 ---
-title: Quality Settings - Layer Height
+title: Layer Height
 ---
 
 # Layer Height

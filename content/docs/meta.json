@@ -1,0 +1,17 @@
+{
+  "title": "Orca Slicer",
+  "icon": "Building2",
+  "pages": [
+    "---Introduction---",
+    "index",
+    "---Printer Settings---",
+    "---Quality Settings---",
+    "...print-settings/quality",
+    "---Speed Settings---",
+    "...print-settings/speed",
+    "---Multimaterial---",
+    "semm",
+    "---Development---",
+    "...development"
+  ]
+}

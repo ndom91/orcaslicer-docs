@@ -2,13 +2,14 @@
 title: How to create profiles
 ---
 
-# Guide: Develop Profiles for OrcaSlicer
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
 
-## Introduction
 This guide will help you develop profiles for OrcaSlicer.
 
 ## High-level Overview
+
 OrcaSlicer uses JSON files to store profiles. There are four types of profiles:
+
 1. Printer model (type `machine_model`). Example: `Orca 3D Fuse1.json`
 2. Printer variant (type `machine`). Example: `Orca 3D Fuse1 0.2 nozzle.json`
 3. Filament (type `filament`). Example: `Generic PLA @Orca 3D Fuse1@.json`
@@ -35,24 +36,32 @@ Naming conventions:
 
 
 A typical file structure for a vendor:
-```
-resources\profiles\
-    - Orca 3D.json
-    - Orca 3D\
-        - machine\
-            - Orca 3D Fuse1.json
-            - Orca 3D Fuse1 0.2 nozzle.json
-            - Orca 3D Fuse1 0.4 nozzle.json
-        - process\
-            - 0.10mm Standard @Orca 3D Fuse1 0.2.json
-            - 0.20mm Standard @Orca 3D Fuse1 0.4.json
-        - filament\
-            - Generic PLA @Orca 3D Fuse1@.json
-```
+
+<Files>
+  <Folder name="resources\profiles" defaultOpen>
+    <File name="Orca 3D.json" />
+    <Folder name="Orca 3D" defaultOpen>
+        <Folder name="machine" defaultOpen>
+            <File name="Orca 3D Fuse1.json" />
+            <File name="Orca 3D Fuse1 0.2 nozzle.json" />
+            <File name="Orca 3D Fuse1 0.4 nozzle.json" />
+        </Folder>
+        <Folder name="process" defaultOpen>
+            <File name="0.10mm Standard @Orca 3D Fuse1 0.2.json" />
+            <File name="0.20mm Standard @Orca 3D Fuse1 0.4.json" />
+        </Folder>
+        <Folder name="filament" defaultOpen>
+            <File name="Generic PLA @Orca 3D Fuse1@.json" />
+        </Folder>
+    </Folder>
+  </Folder>
+</Files>
 
 
-**NOTE 1**: Use short vendor names in filenames to avoid excessive length.
-**NOTE 2**: Filament profiles are **optional**. Create them only if the vendor has specifically tuned profiles for the given printer. See [Filament profiles](#filament-profiles) for details.
+<Callout type="info">
+- Use short vendor names in filenames to avoid excessive length.
+- Filament profiles are **optional**. Create them only if the vendor has specifically tuned profiles for the given printer. See [Filament profiles](#filament-profiles) for details.
+</Callout>
 
 ## Filament Profiles
 OrcaSlicer features a global filament library called `OrcaFilamentLibrary`, which is automatically available for all printers. It includes generic filaments like `Generic PLA @System` and `Generic ABS @System` etc.
@@ -60,6 +69,7 @@ OrcaSlicer features a global filament library called `OrcaFilamentLibrary`, whic
 Printer vendors can override specific filaments in the global library for certain printer models by creating new filament profiles.
 
 Relationship diagram:
+
 ```mermaid
 graph TD;
     OrcaFilamentLibrary-->Orca_3D_filament;

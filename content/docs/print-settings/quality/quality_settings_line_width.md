@@ -1,5 +1,5 @@
 ---
-title: Quality Settings - Line Width
+title: Line Width
 ---
 
 # Line Width
