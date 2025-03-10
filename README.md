@@ -1,26 +1,28 @@
 # orcaslicer-docs
 
-This is a Next.js application generated with
-[Create Fumadocs](https://github.com/fuma-nama/fumadocs).
+Demo [Orca Slicer](https://orcaslicer.com) static docs site.
 
-Run development server:
+## Getting Started
 
-```bash
-npm run dev
-# or
-pnpm dev
-# or
-yarn dev
+1. Clone repository
+
+```sh
+git clone https://github.com/ndom91/orcaslicer-docs
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+2. Install dependencies
 
-## Learn More
+```sh
+cd orcaslicer-docs
+pnpm install
+```
 
-To learn more about Next.js and Fumadocs, take a look at the following
-resources:
+3. Start development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js
-  features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Fumadocs](https://fumadocs.vercel.app) - learn about Fumadocs
+```sh
+pnpm dev
+```
+
+## License
+
+MIT
