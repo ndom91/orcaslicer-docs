@@ -2,8 +2,6 @@
 title: Seam
 ---
 
-# Seam Section
-
 Unless printed in spiral vase mode, every layer needs to begin somewhere and end somewhere. That start and end of the extrusion is what results in what visually looks like a seam on the perimeters. This section contains options to control the visual appearance of a seam.
 
 - **Seam Position**: Controls the placement of the seam.

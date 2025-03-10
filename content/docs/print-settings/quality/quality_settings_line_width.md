@@ -2,8 +2,6 @@
 title: Line Width
 ---
 
-# Line Width
-
 These settings control how wide the extruded lines are.
 
 - **Default**: The default line width in mm or as a percentage of the nozzle size.

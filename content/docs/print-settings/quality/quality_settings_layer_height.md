@@ -2,8 +2,6 @@
 title: Layer Height
 ---
 
-# Layer Height
-
 This setting controls how tall each printed layer will be. Typically, a smaller layer height produces a better-looking part with less jagged edges, especially around curved sections (like the top of a sphere). However, lower layer heights mean more layers to print, proportionally increasing print time.
 
 ### Tips:
