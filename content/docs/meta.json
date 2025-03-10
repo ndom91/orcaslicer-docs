@@ -4,7 +4,9 @@
   "pages": [
     "---Introduction---",
     "index",
+    "...",
     "---Printer Settings---",
+    "...print-settings",
     "---Quality Settings---",
     "...print-settings/quality",
     "---Speed Settings---",
