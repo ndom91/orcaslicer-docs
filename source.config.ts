@@ -10,5 +10,6 @@ export default defineConfig({
   mdxOptions: {
     remarkPlugins: [remarkMermaid],
   },
+  lastModifiedTime: 'git'
 });
 
