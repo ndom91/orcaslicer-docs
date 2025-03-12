@@ -64,7 +64,7 @@ export async function generateMetadata(props: {
   if (!page) notFound();
 
   return {
-    title: page.data.title,
+    title: `OrcaSlicer - ${page.data.title}`,
     description: page.data.description,
   };
 }
