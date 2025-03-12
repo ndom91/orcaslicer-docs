@@ -12,7 +12,7 @@ The required software can be found at the following links:
     - After `gettext` is installed, it is recommended to ensure the gettext bin is in your `PATH` variable
     - The full manual page for `gettext` can be found [here](http://www.gnu.org/software/gettext/manual/gettext.html)
 
-### 1. How do I add a translation or fix an existing translation
+## How do I add a translation or fix an existing translation
 
 <Steps>
 <Step>
@@ -32,7 +32,7 @@ Copy `OrcaSlicer_xx.mo` into `resources/i18n/xx` and rename it to `OrcaSlicer.mo
 </Step>
 </Steps>
 
-### 2. How do I add a new language support
+## How do I add a new language support
 
 <Steps>
 <Step>
@@ -55,7 +55,7 @@ Notice. When the translation is complete you need to:
 </Step>
 </Steps>
 
-### 3. How do I add a new text resource when implementing a feature to Orca Slicer
+## How do I add a new text resource when implementing a feature to Orca Slicer
 
 Each string resource in Orca Slicer available for translation needs to be explicitly marked using L() macro like this:
 
@@ -66,7 +66,7 @@ auto msg = L("This message to be localized")
 To get translated text use one of needed macro/function (`_(s)` or `_CHB(s)` ).
 If you add new file resource, add it to the list of files containing macro `L()`
 
-### 4. How do I use `gettext` to localize my own application taking Orca Slicer as an example
+## How do I use `gettext` to localize my own application taking Orca Slicer as an example
 
 <Steps>
 <Step>

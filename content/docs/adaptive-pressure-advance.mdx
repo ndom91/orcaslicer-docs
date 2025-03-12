@@ -26,7 +26,7 @@ This feature has been tested with Klipper-based printers. While it may work with
 
 Klipper firmware released after July 11th, 2024 (version greater than approximately v0.12.0-267) contains the above fix and is compatible with adaptive pressure advance. If you are upgrading from an older version, make sure you update both your Klipper installation as well as reflash the printer MCU’s (main board and toolhead board if present).
 
-## Use case (what to expect)
+## Use Case
 
 Following experimentation, it has been noticed that the optimal pressure advance value is less:
 
@@ -46,7 +46,7 @@ In addition, it means that you only need to tune this feature once and print acr
 
 Finally, if during calibration you notice that there is little to no variance between the PA tests, this feature is redundant for you. **From experiments, high flow nozzles fitted on high-speed core XY printers appear to benefit the most from this feature as they print with a larger range of flow rates and at a larger range of accelerations.**
 
-### Expected results:
+### Expected Results
 
 With this feature enabled there should be absolutely no bulge in the corners, just the smooth rounding caused by the square corner velocity of your printer.
 ![337601149-cbd96b75-a49f-4dde-ab5a-9bbaf96eae9c](https://github.com/user-attachments/assets/01234996-0528-4462-90c6-43828a246e41)
@@ -58,9 +58,9 @@ Compared to with this feature disabled, where the internal solid infill and exte
 ![337621601-eacc816d-cff0-42e4-965d-fb5c00d34205](https://github.com/user-attachments/assets/82edfd96-d870-48fe-91c7-012e8c0d9ed0)
 
 
-## How to calibrate the adaptive pressure advance model
+## Calibrating the Adaptive Pressure Advance Model
 
-### Defining the calibration sets
+### Defining the Calibration Sets
 
 Firstly, it is important to understand your printer speed and acceleration limits in order to set meaningful boundaries for the calibrations:
 
@@ -110,7 +110,7 @@ We, therefore, need to run 12 PA tests as below:
   11. 150 – 4k
   12. 200 – 4k
 
-### Identifying the flow rates from the print speed
+### Identifying Flow Rates
 
 #### OrcaSlicer 2.2.0 and later
 
@@ -120,16 +120,15 @@ Test parameters needed to build adaptive PA table are printed on the test sample
 
 Test sample above was done with acceleration 12000 mm/s² and flow rate 27.13 mm³/s
 
-
-#### OrcaSlicer 2.1.0 and older.
+#### OrcaSlicer 2.1.0 and older
 
 As mentioned earlier, **the print speed is used as a proxy to vary the extrusion flow rate**. Once your PA test is set up, change the gcode preview to “flow” and move the horizontal slider over one of the herringbone patterns and take note of the flow rate for different speeds.
 ![337939815-e358b960-cf96-41b5-8c7e-addde927933f](https://github.com/user-attachments/assets/21290435-6f2a-4a21-bcf0-28cd6ae1912a)
 
 
-### Running the tests
+### Running Test
 
-#### General tips
+#### General Tips
 
 It is recommended that the PA step is set to a small value, to allow you to make meaningful distinctions between the different tests – **therefore a PA step value of 0.001 is recommended.  **
 
@@ -160,7 +159,7 @@ Now input your identified print speeds and accelerations in the fields above and
 
 **IMPORTANT:** Make sure your acceleration values are all the same in all text boxes. Same for the print speed values and Jerk (XY) values. Make sure your Jerk value is set to the external perimeter jerk used in your print profiles.
 
-#### Test results processing
+#### Results Processing
 
 Now run the tests and note the optimal PA value, the flow, and the acceleration. You should produce a table like this:
 
@@ -176,7 +175,7 @@ Remember to paste the values in the adaptive pressure advance measurements text 
 
 ### Tips
 
-#### Model input:
+#### Model input
 
 The adaptive PA model built into the slicer is flexible enough to allow for as many or as few increments of flow and acceleration as you want. Ideally, you want at a minimum 3x data points for acceleration and flow in order to create a meaningful model.
 
@@ -186,7 +185,7 @@ Similarly for acceleration – in the above example you’ll input only 4 rows i
 
 **However, make sure a triplet of values is always provided – PA value, Flow, Acceleration.**
 
-#### Identifying the right PA:
+#### Identifying the right PA
 
 Higher acceleration and higher flow rate PA tests are easier to identify the optimal PA as the range of “good” values is much narrower. It’s evident where the PA is too large, as gaps start to appear in the corner and where PA is too low, as the corner starts bulging.
 
