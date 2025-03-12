@@ -1,5 +1,5 @@
 ---
-title: How to create profiles
+title: Create a Profile
 ---
 
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
@@ -86,7 +86,7 @@ The following sample JSON file shows how to create a new generic filament profil
 
 1. The first step is to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament` folder. The file name should be `Generic PLA-GF @System.json`. Please note that we leave the `compatible_printers` field empty so that it is available for all printers.
 
-```json
+```json title="Generic PLA-GF @System.json"
 {
     "type": "filament",
     "filament_id": "GFL99",
@@ -105,7 +105,7 @@ The following sample JSON file shows how to create a new generic filament profil
 
 2. Register the profile in `resources\profiles\OrcaFilamentLibrary.json`:
 
-```json
+```json title="OrcaFilamentLibrary.json"
 {
     "name": "OrcaFilamentLibrary",
     "version": "02.02.00.04",
@@ -121,17 +121,22 @@ The following sample JSON file shows how to create a new generic filament profil
 }
 ```
 
-3. The last step is to validate the newly added filament profiles. You can run OrcaSlicer to verify if the filament you just added is available and usable. You can also use the [Orca profile validator](https://github.com/SoftFever/Orca_tools/releases/tag/1) tool to help debug any errors. **NOTE**: You need to delete the `%appdata%/OrcaSlicer/system` folder to force OrcaSlicer to reload your lastest changes.
+3. The last step is to validate the newly added filament profiles. You can run OrcaSlicer to verify if the filament you just added is available and usable. You can also use the [Orca profile validator](https://github.com/SoftFever/Orca_tools/releases/tag/1) tool to help debug any errors.
 
-The process is the same if you want to add a new brand filament profile into the global library. You need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament\brand_name` folder. The only difference is that you should put the file into the brand's own subfolder.`resources\profiles\OrcaFilamentLibrary\filament\brand_name`.
+<Callout type="info" title="Windows">
+    You need to delete the `%APPDATA%/OrcaSlicer/system` folder to force OrcaSlicer to reload your lastest changes.
+</Callout>
+
+The process is the same if you want to add a new brand filament profile into the global library. You need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament\brand_name` folder. The only difference is that you should put the file into the brand's own subfolder.
 
 ### Adding Filament Profiles to Printer Vendor Library
 In this section, we will discuss how to add a new filament profile for a certain vendor.
 If you want to add a new filament profile, whether it's a brand new profile or a specialized version of a global filament profile for a given printer, you need to create a new file in the `resources\profiles\vendor_name\filament` folder. If a base type already exists in the global library, you can use this file as a base profile by inheriting it.
+
 Below is a sample JSON file showing how to create a specialized `Generic ABS` filament profile for the ToolChanger printer.
 Please note that here we must leave the compatible_printers field non-empty, unlike in the global library.
 
-```json
+```json title="Generic ABS @MyToolChanger.json"
 {
     "type": "filament",
     "setting_id": "GFB99_MTC_0",
@@ -185,10 +190,13 @@ Please note that here we must leave the compatible_printers field non-empty, unl
 ```
 
 ## Process Profiles
-WIP...
+
+**WIP** - Help improve our documentation by contributing to the OrcaSlicer documentation repository by clicking on **"Edit on GitHub"** at the bottom of the page.
 
 ## Printer Profiles
-WIP...
+
+**WIP** - Help improve our documentation by contributing to the OrcaSlicer documentation repository by clicking on **"Edit on GitHub"** at the bottom of the page.
 
 ## Printer Variant Profiles
-WIP...
+
+**WIP** - Help improve our documentation by contributing to the OrcaSlicer documentation repository by clicking on **"Edit on GitHub"** at the bottom of the page.
