@@ -1,9 +1,8 @@
 @import 'tailwindcss';
-@import 'fumadocs-ui/css/neutral.css';
 @import 'fumadocs-ui/css/preset.css';
-
+@import 'fumadocs-ui/css/vitepress.css';
 @source '../node_modules/fumadocs-ui/dist/**/*.js';
 
-@theme {
-  --primary-color: #00675B;
+:root {
+  --color-fd-primary: #00675B;
 }
