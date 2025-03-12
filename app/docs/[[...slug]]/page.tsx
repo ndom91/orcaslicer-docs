@@ -7,6 +7,7 @@ import {
 } from 'fumadocs-ui/page';
 import { notFound } from 'next/navigation';
 import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { getGithubLastEdit } from 'fumadocs-core/server';
 import { ImageZoom } from 'fumadocs-ui/components/image-zoom';
 
 export default async function Page(props: {
@@ -15,6 +16,12 @@ export default async function Page(props: {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();
+
+  const time = await getGithubLastEdit({
+    owner: 'ndom91',
+    repo: 'orcaslicer-docs',
+    path: `content/docs/${page.file.path}`,
+  });
 
   const MDX = page.data.body;
 
@@ -25,6 +32,7 @@ export default async function Page(props: {
       tableOfContent={{
         style: 'clerk',
       }}
+      lastUpdate={time ? new Date(time) : undefined}
       editOnGithub={{
         owner: 'ndom91',
         repo: 'orcaslicer-docs',
