@@ -2,18 +2,14 @@
 title: Bed Types
 ---
 
-# Multiple bed types
+To get started, you can enable multiple bed types in printer settings.
 
-You can enable it in printer settings.
-
-
-Once enabled, you can select the bed type in the drop-down menu, corresponding bed temperature will be set automatically.
-You can set the bed temperature for each bed type in the filament settings as demonstrated in the following image.
 ![multi_bed](/images/bed-types.gif)
 
+Next, you can select the bed type in the drop-down menu, corresponding bed temperature will be set automatically.
+You can set the bed temperature for each bed type in the filament settings as demonstrated above.
 
-Orca also support `curr_bed_type` variable in custom G-code.
-For example, the following sample G-codes can detect the selected bed type and adjust the G-code offset accordingly for Klipper:
+Orca also support `curr_bed_type` variable in custom G-code. For example, the following sample G-codes can detect the selected bed type and adjust the G-code offset accordingly for Klipper:
 
 ```gcode
 {if curr_bed_type=="Textured PEI Plate"}
@@ -23,7 +19,7 @@ For example, the following sample G-codes can detect the selected bed type and a
 {endif}
 ```
 
-Available bed types are:
+Available bed types include the following.
 
 - "Cool Plate"
 - "Engineering Plate"
