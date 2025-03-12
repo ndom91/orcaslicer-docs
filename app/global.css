@@ -6,3 +6,7 @@
 :root {
   --color-fd-primary: #00675B;
 }
+
+code {
+  word-break: break-word;
+}
