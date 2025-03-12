@@ -10,10 +10,10 @@ This guide will help you develop profiles for OrcaSlicer.
 
 OrcaSlicer uses JSON files to store profiles. There are four types of profiles:
 
-1. Printer model (type `machine_model`). Example: `Orca 3D Fuse1.json`
-2. Printer variant (type `machine`). Example: `Orca 3D Fuse1 0.2 nozzle.json`
-3. Filament (type `filament`). Example: `Generic PLA @Orca 3D Fuse1@.json`
-4. Process (type `process`). Example: `0.10mm Standard @Orca 3D Fuse1 0.2.json`
+1. Printer model (type `machine_model`), i.e. `Orca 3D Fuse1.json`
+2. Printer variant (type `machine`), i.e. `Orca 3D Fuse1 0.2 nozzle.json`
+3. Filament (type `filament`), i.e. `Generic PLA @Orca 3D Fuse1@.json`
+4. Process (type `process`), i.e. `0.10mm Standard @Orca 3D Fuse1 0.2.json`
 
 Additionally, there is an overall meta file for each vendor (`Orca 3D.json`).
 
@@ -68,8 +68,6 @@ OrcaSlicer features a global filament library called `OrcaFilamentLibrary`, whic
 
 Printer vendors can override specific filaments in the global library for certain printer models by creating new filament profiles.
 
-Relationship diagram:
-
 ```mermaid
 graph TD;
     OrcaFilamentLibrary-->Orca_3D_filament;
@@ -77,9 +75,12 @@ graph TD;
     OrcaFilamentLibrary-->Vendor_B_filament;
 ```
 
-**NOTE**: Create new filament profiles only if you have truly specifically tuned the filament for the given printer. Otherwise, use the global library. The global library has a better chance to receive optimizations and updates from OrcaSlicer contributors, which will benefit users of all printers.
+<Callout type="info">
+Create new filament profiles only if you have truly specifically tuned the filament for the given printer. Otherwise, use the global library. The global library has a better chance to receive optimizations and updates from OrcaSlicer contributors, which will benefit users of all printers.
+</Callout>
 
 ### Adding Filament Profiles to the Global Library
+
 In this section, we will discuss how to add a new filament profile into the global library.
 If you want to add a new generic profile into the global library, you need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament` folder. If a base type already exists in the global library, you can use this file as a base profile by inheriting it.
 The following sample JSON file shows how to create a new generic filament profile `Generic PLA-GF @System` in the global library.
@@ -103,7 +104,7 @@ The following sample JSON file shows how to create a new generic filament profil
 }
 ```
 
-2. Register the profile in `resources\profiles\OrcaFilamentLibrary.json`:
+2. Register the profile in `resources\profiles\OrcaFilamentLibrary.json`
 
 ```json title="OrcaFilamentLibrary.json"
 {
@@ -130,6 +131,7 @@ The following sample JSON file shows how to create a new generic filament profil
 The process is the same if you want to add a new brand filament profile into the global library. You need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament\brand_name` folder. The only difference is that you should put the file into the brand's own subfolder.
 
 ### Adding Filament Profiles to Printer Vendor Library
+
 In this section, we will discuss how to add a new filament profile for a certain vendor.
 If you want to add a new filament profile, whether it's a brand new profile or a specialized version of a global filament profile for a given printer, you need to create a new file in the `resources\profiles\vendor_name\filament` folder. If a base type already exists in the global library, you can use this file as a base profile by inheriting it.
 
@@ -200,3 +202,4 @@ Please note that here we must leave the compatible_printers field non-empty, unl
 ## Printer Variant Profiles
 
 **WIP** - Help improve our documentation by contributing to the OrcaSlicer documentation repository by clicking on **"Edit on GitHub"** at the bottom of the page.
+

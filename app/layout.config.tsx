@@ -16,6 +16,7 @@ export const baseOptions: BaseLayoutProps = {
       </div>
     ),
   },
+  githubUrl: 'https://github.com/ndom91/orcaslicer-docs',
   links: [
     {
       text: 'Download',
