@@ -2,6 +2,7 @@
 title: Create a Profile
 ---
 
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 import { File, Folder, Files } from 'fumadocs-ui/components/files';
 
 This guide will help you develop profiles for OrcaSlicer.
@@ -85,7 +86,9 @@ In this section, we will discuss how to add a new filament profile into the glob
 If you want to add a new generic profile into the global library, you need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament` folder. If a base type already exists in the global library, you can use this file as a base profile by inheriting it.
 The following sample JSON file shows how to create a new generic filament profile `Generic PLA-GF @System` in the global library.
 
-1. The first step is to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament` folder. The file name should be `Generic PLA-GF @System.json`. Please note that we leave the `compatible_printers` field empty so that it is available for all printers.
+<Steps>
+<Step>
+The first step is to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament` folder. The file name should be `Generic PLA-GF @System.json`. Please note that we leave the `compatible_printers` field empty so that it is available for all printers.
 
 ```json title="Generic PLA-GF @System.json"
 {
@@ -104,7 +107,9 @@ The following sample JSON file shows how to create a new generic filament profil
 }
 ```
 
-2. Register the profile in `resources\profiles\OrcaFilamentLibrary.json`
+</Step>
+<Step>
+Register the profile in `resources\profiles\OrcaFilamentLibrary.json`
 
 ```json title="OrcaFilamentLibrary.json"
 {
@@ -121,12 +126,16 @@ The following sample JSON file shows how to create a new generic filament profil
     ]
 }
 ```
+</Step>
+<Step>
 
-3. The last step is to validate the newly added filament profiles. You can run OrcaSlicer to verify if the filament you just added is available and usable. You can also use the [Orca profile validator](https://github.com/SoftFever/Orca_tools/releases/tag/1) tool to help debug any errors.
+The last step is to validate the newly added filament profiles. You can run OrcaSlicer to verify if the filament you just added is available and usable. You can also use the [Orca profile validator](https://github.com/SoftFever/Orca_tools/releases/tag/1) tool to help debug any errors.
 
 <Callout type="info" title="Windows">
     You need to delete the `%APPDATA%/OrcaSlicer/system` folder to force OrcaSlicer to reload your lastest changes.
 </Callout>
+</Step>
+</Steps>
 
 The process is the same if you want to add a new brand filament profile into the global library. You need to create a new file in the `resources\profiles\OrcaFilamentLibrary\filament\brand_name` folder. The only difference is that you should put the file into the brand's own subfolder.
 
